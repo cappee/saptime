@@ -1,8 +1,8 @@
 use crate::components::lesson_list::LessonList;
 use crate::components::timetable_grid::TimetableGrid;
 use crate::logic::course_group::{CourseGroup, group_by_course};
-use crate::{components::course_form::CourseForm, logic::dedup::DedupedSlot};
-use chrono::{NaiveDate, Local, Duration};
+use crate::{components::course_form::CourseForm};
+use chrono::{Local, Duration};
 use dioxus::prelude::*;
 
 use crate::logic::{dedup::dedup_lessons, lesson::Lesson, validation::is_valid_course_id, lesson::raw_event_to_lesson};
@@ -10,7 +10,6 @@ use crate::api::client::fetch_timetable;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
-const HEADER_SVG: Asset = asset!("/assets/header.svg");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
 #[component]

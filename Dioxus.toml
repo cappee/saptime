@@ -1,9 +1,8 @@
 [application]
 
 [web.app]
-
-# HTML title tag content
 title = "saptime"
+# base_path = "saptime"
 
 # include `assets` in web platform
 [web.resource]
