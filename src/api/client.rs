@@ -8,7 +8,7 @@ pub async fn fetch_timetable(
     end: NaiveDate,
 ) -> Result<TimetableResponse, String> {
     let url = format!(
-        "http://127.0.0.1:8787?course={}&start={}T00:00:00&end={}T00:00:00",
+        "https://saptime-proxy.cappee.workers.dev?course={}&start={}T00:00:00&end={}T00:00:00",
         course_id,
         start.format("%Y-%m-%d"),
         end.format("%Y-%m-%d"),
