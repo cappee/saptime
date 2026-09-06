@@ -1,7 +1,9 @@
 use crate::components::lesson_list::LessonList;
+use crate::components::theme_toggle::ThemeToggle;
 use crate::components::timetable_grid::TimetableGrid;
 use crate::logic::course_group::{CourseGroup, group_by_course};
 use crate::{components::course_form::CourseForm};
+use crate::theme::use_theme;
 use chrono::{Local, Duration};
 use dioxus::prelude::*;
 
@@ -14,6 +16,8 @@ const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
 #[component]
 pub fn App() -> Element {
+    let dark_mode = use_theme();
+    
     let course_id = use_signal(|| String::new());
     let start_date = use_signal(|| Local::now().date_naive());
     let selected: Signal<Vec<CourseGroup>> = use_signal(|| Vec::new());
@@ -46,6 +50,7 @@ pub fn App() -> Element {
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
 
+        ThemeToggle { dark_mode }
         CourseForm {
             course_id: course_id,
             start_date: start_date
