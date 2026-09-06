@@ -23,11 +23,11 @@ pub fn LessonList(
                     let has_conflict = !conflicts.is_empty();
 
                     let bg_class = if is_selected {
-                        "bg-blue-200 border-blue-500"
+                        "bg-blue-400 border-blue-500"
                     } else if has_conflict {
-                        "bg-red-100"
+                        "bg-red-400"
                     } else {
-                        "bg-green-100"
+                        "bg-green-400"
                     };
 
                     let cursor_class = if has_conflict && !is_selected { "cursor-not-allowed opacity-60" } else { "cursor-pointer" };
